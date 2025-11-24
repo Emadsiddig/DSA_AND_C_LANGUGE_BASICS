@@ -1,0 +1,34 @@
+#include<stdio.h>
+#define max 100
+
+int main() {
+    int n, i, num, a[max];
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    if(n >= max) {
+        printf("Array size too large\n");
+        return 1;
+    }
+
+    printf("Enter the elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the number to insert at beginning: ");
+    scanf("%d", &num);
+
+    for(i = n; i > 0; i--) {
+        a[i] = a[i-1];
+    }
+    a[0] = num;
+    n++;
+
+    printf("Array after insertion:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    return 0;
+}
